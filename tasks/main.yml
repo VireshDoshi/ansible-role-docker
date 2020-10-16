@@ -8,7 +8,7 @@
 - name: find 
   find:
     paths: /etc/yum.repos.d
-    patterns: "*.repos"
+    patterns: "*.repo"
     recurse: yes 
   register: files_matched
 
