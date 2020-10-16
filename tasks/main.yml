@@ -15,17 +15,17 @@
 - debug:
     msg: "{{ files_matched.files }}"
 
-- name: fix up the repo file 
-  replace:
-    path: /etc/yum.repos.d/docker-ce.repo
-    regexp: "7Server"
-    replace: "7"
-
 - name: add repo 
   yum_repository:
     name: docker-ce 
     description: yum docker 
     baseurl:  https://download.docker.com/linux/centos/docker-ce.repo
+
+- name: fix up the repo file 
+  replace:
+    path: /etc/yum.repos.d/docker-ce.repo
+    regexp: "7Server"
+    replace: "7"
 
 - name: Install Docker.
   package:
