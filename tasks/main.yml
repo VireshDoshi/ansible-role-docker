@@ -27,7 +27,7 @@
     description: yum docker 
     baseurl:  https://download.docker.com/linux/centos/docker-ce.repo
 
-    - name: Install Docker.
+- name: Install Docker.
   package:
     name: "{{ docker_package }}"
     state: "{{ docker_package_state }}"
