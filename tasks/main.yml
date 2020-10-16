@@ -24,7 +24,7 @@
 - name: fix up the repo file 
   replace:
     path: /etc/yum.repos.d/docker-ce.repo
-    regexp: "7Server"
+    regexp: "\$releasever"
     replace: "7"
 
 - name: Install Docker.
