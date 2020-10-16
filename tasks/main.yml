@@ -8,9 +8,9 @@
 - name: fix up the repo file 
   replace:
     path: /etc/yum.repos.d/docker-ce.repo
-    regexp: "7server"
+    regexp: "7Server"
     replace: "7"
-    
+
 - name: Install Docker.
   package:
     name: "{{ docker_package }}"
