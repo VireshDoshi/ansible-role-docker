@@ -5,6 +5,12 @@
 - include_tasks: setup-Debian.yml
   when: ansible_os_family == 'Debian'
 
+- name: fix up the repo file 
+  replace:
+    path: /etc/yum.repos.d/docker-ce.repo
+    regexp: "7server"
+    replace: "7"
+    
 - name: Install Docker.
   package:
     name: "{{ docker_package }}"
