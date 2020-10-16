@@ -21,7 +21,13 @@
     regexp: "7Server"
     replace: "7"
 
-- name: Install Docker.
+- name: add repo 
+  yum_repository:
+    name: docker-ce 
+    description: yum docker 
+    baseurl:  https://download.docker.com/linux/centos/docker-ce.repo
+
+    - name: Install Docker.
   package:
     name: "{{ docker_package }}"
     state: "{{ docker_package_state }}"
